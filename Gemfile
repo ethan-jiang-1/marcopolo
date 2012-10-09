@@ -46,7 +46,7 @@ end
 
 group :test do
   gem "factory_girl_rails",  "=1.7.0"
-  gem "cucumber-rails"
+  gem "cucumber-rails", :require => false
   gem "capybara"
   gem "rspec-rails", ">= 2.0.1"
 end

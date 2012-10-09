@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20121009031121) do
     t.string  "name"
     t.string  "desc"
     t.boolean "is_spot"
-    t.boolean "is_area"
   end
 
   create_table "users", :force => true do |t|
