@@ -15,17 +15,24 @@ namespace :mp do
   end
 
   def populate_place_USA
-    @pcs_USA = PlaceCategory.find_all_by_country("USA")
-    @pc_city = @pcs_USA.find {|pc| pc.name == "city"}
-    @pc_state = @pcs_USA.find {|pc| pc.name == "state"}
+    @pcs_USA = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_USA)
+    @pcc_state =  @pcs_USA.find {|pc| pc[:name] == "state"}[:code]
+    @pcc_county=  @pcs_USA.find {|pc| pc[:name] == "county"}[:code]
+    @pcc_city =   @pcs_USA.find {|pc| pc[:name] == "city"}[:code]
+    @pcc_town =   @pcs_USA.find {|pc| pc[:name]== "town"}[:code]
 
-    c1 = Place.create(:name=>"San Diego")
+    Place.create!(:name=>"California",:place_category_code=>@pcc_state)
+
+
+=begin
+    Place.create!(:name=>"San Diego",@pcc_city)
     @pc_city.places << c1
     c1.save!
 
     s1 = Place.create(:name=>"California")
     @pc_state.places << s1
     s1.save!
+=end
 
 
   end

@@ -4,25 +4,24 @@ require File.expand_path("../../../lib/place_category",__FILE__)
 
 describe  PlaceCategory do
 
-  describe "GET 'index'" do
-    it "test" do
+  describe "constants" do
+    it "should have all items prepared" do
       #yizhen - how to get the Place_category instance (singleton)
       pca = PlaceCategory.getCategories
-      #p pca
+      pca.count.should_not be 0
 
       pcm = PlaceCategory.getCountries
-      #p pcm
+      pcm.count.should_not be 0
 
       pca_usa = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_USA)
-      #p pca_usa
+      pca_usa.count.should_not be 0
 
       pca_chn = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_CHN)
-      #p pca_chn
+      pca_chn.count.should_not be 0
 
       pccs = PlaceCategory.getValidatePlaceCategoryCodes()
-      #p pccs
+      pccs.count.should_not be 0
 
-      pending "yizhen: do some test here for PlaceCategory  #{__FILE__}"
     end
   end
 
