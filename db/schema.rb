@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20121009071723) do
 
-  create_table "place_categories", :force => true do |t|
-    t.string  "name"
-    t.string  "desc"
-    t.string  "country"
-    t.integer "level"
-  end
-
-  add_index "place_categories", ["country"], :name => "index_place_categories_on_country"
-
   create_table "places", :force => true do |t|
     t.string   "name"
     t.string   "alt_name1"
@@ -28,13 +19,13 @@ ActiveRecord::Schema.define(:version => 20121009071723) do
     t.string   "alt_name3"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "place_category_id"
+    t.integer  "place_category_code"
     t.boolean  "is_inactive"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
-  add_index "places", ["place_category_id"], :name => "index_places_on_place_category_id"
+  add_index "places", ["place_category_code"], :name => "index_places_on_place_category_code"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

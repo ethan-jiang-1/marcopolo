@@ -1,25 +1,28 @@
 require 'spec_helper'
 require File.expand_path("../../../lib/place_category",__FILE__)
-require File.expand_path("../../../lib/place_category",__FILE__)
-require File.expand_path("../../../lib/place_category",__FILE__)
 
-describe  PlaceCategoryX do
+
+describe  PlaceCategory do
 
   describe "GET 'index'" do
     it "test" do
       #yizhen - how to get the Place_category instance (singleton)
-      pca = PlaceCategoryX.getCategories
-      p pca
+      pca = PlaceCategory.getCategories
+      #p pca
 
-      pcm = PlaceCategoryX.getCountries
-      p pcm
+      pcm = PlaceCategory.getCountries
+      #p pcm
 
-      pca_USA = PlaceCategoryX.getCategories_by_country(PCI_COUNTRY_NAME_USA)
-      p pca_USA
+      pca_usa = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_USA)
+      #p pca_usa
 
-      pca_CHN = PlaceCategoryX.getCategories_by_country(PCI_COUNTRY_NAME_CHN)
-      p pca_CHN
+      pca_chn = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_CHN)
+      #p pca_chn
 
+      pccs = PlaceCategory.getValidatePlaceCategoryCodes()
+      #p pccs
+
+      pending "yizhen: do some test here for PlaceCategory  #{__FILE__}"
     end
   end
 

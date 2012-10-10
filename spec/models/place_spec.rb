@@ -2,40 +2,54 @@
 #
 # Table name: places
 #
-#  id                :integer          not null, primary key
-#  name              :string(255)
-#  alt_name1         :string(255)
-#  alt_name2         :string(255)
-#  alt_name3         :string(255)
-#  latitude          :float
-#  longitude         :float
-#  place_category_id :integer
-#  is_inactive       :boolean
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  alt_name1           :string(255)
+#  alt_name2           :string(255)
+#  alt_name3           :string(255)
+#  latitude            :float
+#  longitude           :float
+#  place_category_code :integer
+#  is_inactive         :boolean
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
 #
 
 require 'spec_helper'
+require File.expand_path("../../../lib/place_category",__FILE__)
 
 describe Place do
   describe "basic validation" do
     before(:each) do
-      @pc_state = PlaceCategory.create!(:name=>"state", :desc=>"bbb", :country => "USA", :level => 2 )
-      @pc_city = PlaceCategory.create!(:name=>"city", :desc=>"aaa", :country =>"USA", :level=>3 )
-      @pc_spot = PlaceCategory.create!(:name=>"spot", :desc=>"ccc", :country => "USA", :level => 10 )
+      pcs = PlaceCategory.getCategories_by_country(PCC_COUNTRY_NAME_USA)
+
+      pc_state_city = pcs.find {|x| x[:name]=="city"}
+
+      pc_state_city.should_not equal nil
+
+      @pcc_city_in_USA = pc_state_city[:code]
+
+      @pcc_wrong = 0
+      PlaceCategory.getValidatePlaceCategoryCodes.find {|code| code== @pcc_wrong}.should be nil
+
     end
 
 
 
-    it "should be able to create with good with validated data" do
-      a = Place.create(:name=>"San Diego")
-      @pc_city.places << a
-      a.save!
+    it "should be able to create with good with validated data: name and pcc code" do
+      a = Place.create!(:name=>"San Diego", :place_category_code=>@pcc_city_in_USA)
 
       ax = Place.find_by_id(a.id)
       ax.id.should be a.id
-      ax.place_category_id.should be @pc_city.id
     end
+
+    it "should be not create with wrong pcc code" do
+      lambda do
+        Place.create!(:name=>"San Diego", :place_category_code => @pcc_wrong)
+      end.should raise_error
+    end
+
+
 
     it "should raise error when to create invalid item" do
       lambda do
