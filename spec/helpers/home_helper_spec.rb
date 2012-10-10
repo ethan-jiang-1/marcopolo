@@ -11,5 +11,9 @@ require 'spec_helper'
 #   end
 # end
 describe HomeHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "have not come up any cases yet" do
+    it "should have some test" do
+      pending "Yizhen: add some examples to (or delete) #{__FILE__}"
+    end
+  end
 end
