@@ -16,6 +16,7 @@
 #
 
 class Place < ActiveRecord::Base
+  has_many :search_places
   attr_accessible :alt_name1, :alt_name2, :alt_name3, :is_inactive, :latitude, :longitude, :name, :place_category_code
   validates_presence_of :name
   validates_presence_of :place_category_code
