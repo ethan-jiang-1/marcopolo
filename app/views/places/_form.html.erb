@@ -1,0 +1,51 @@
+<!-- # == Schema Information
+#
+# Table name: places
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  alt_name1           :string(255)
+#  alt_name2           :string(255)
+#  alt_name3           :string(255)
+#  latitude            :float
+#  longitude           :float
+#  place_category_code :integer
+#  is_inactive         :boolean
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  address             :string(255)
+#
+-->
+
+<%= form_for(@place) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="content">
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </p>
+    <p>
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+    </p>
+    <p>
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+    </p>
+    <p><%= f.submit %></p>
+   </div>
+<% end %>

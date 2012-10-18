@@ -1,0 +1,20 @@
+<h1>Editing place</h1>
+
+<%= render 'form' %>
+
+<h3>Nearby places</h3>
+<ul>
+  <% for place in @place.nearbys(100) %>
+      <li><%= link_to place.address, place %> (<%= place.distance.round(2) %> miles)</li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Edit", edit_place_path(@place) %> |
+  <%= link_to "Destroy", @place, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", places_path %>
+</p>
+
+
+<%= link_to 'Show', @place %> |
+<%= link_to 'Back', places_path %>

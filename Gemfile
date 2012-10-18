@@ -12,7 +12,7 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'mysql2'
-#gem 'sqlite3'
+gem 'geocoder'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"

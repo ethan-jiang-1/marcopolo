@@ -13,14 +13,21 @@
 #  is_inactive         :boolean
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  address             :string(255)
 #
 
 class Place < ActiveRecord::Base
   has_many :search_places
-  attr_accessible :alt_name1, :alt_name2, :alt_name3, :is_inactive, :latitude, :longitude, :name, :place_category_code
+  attr_accessible :alt_name1, :alt_name2, :alt_name3, :address, :is_inactive, :latitude, :longitude, :name, :place_category_code
   validates_presence_of :name
-  validates_presence_of :place_category_code
-  validates_inclusion_of :place_category_code, :in => PlaceCategory.getValidatePlaceCategoryCodes
+  validates_presence_of :address
+
+  #validates_presence_of :place_category_code
+  #validates_inclusion_of :place_category_code, :in => PlaceCategory.getValidatePlaceCategoryCodes
+
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
 end
 
 

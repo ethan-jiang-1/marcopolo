@@ -6,6 +6,8 @@ Macropolo::Application.routes.draw do
   #TODO: Yizhen - customize devise for Macropolo
   devise_for :users
 
+  resources  :places
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
