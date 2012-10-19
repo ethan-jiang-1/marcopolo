@@ -14,7 +14,6 @@ git# See http://help.github.com/ignore-files/ for more about ignoring files.
 /log/*.log
 /tmp
 
-# Ignore some Rubymine setting files
-/.idea/workspace.xml
+
 
 
