@@ -1,6 +1,5 @@
 require 'faker'
 require File.join File.dirname(__FILE__), 'macropolo_populate_place'    #for ruby 1.8,  use require_relative for 1.9
-require File.join File.dirname(__FILE__), 'macropolo_populate_search_place'    #for ruby 1.8,  use require_relative for 1.9
 
 namespace :mp do
   desc "Macropolo: populate constant tables"

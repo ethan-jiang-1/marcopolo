@@ -11,5 +11,7 @@ require 'spec_helper'
 #   end
 # end
 describe PlacesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have some basic test here" do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
 end

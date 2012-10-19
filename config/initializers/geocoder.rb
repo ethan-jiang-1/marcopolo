@@ -1,31 +1,35 @@
-# config/initializers/geocoder.rb
 Geocoder.configure do |config|
+  ## Configurable parameters: if you wish to change some configurable
+  ## behaviour in Geocoder, feel free to uncomment the following lines
+  ## and provide custom parameters.
 
-  # geocoding service (see below for supported options):
-  #config.lookup = :google #:yahoo
-
-  # to use an API key:
-  #config.api_key = "..."
-
-  # geocoding service request timeout, in seconds (default 3):
-  config.timeout = 30
-
-  # set default units to kilometers:
-  #config.units = :km
+  # config.timeout      = 3           # geocoding service timeout (secs)
+  # config.lookup       = :google     # name of geocoding service (symbol)
+  # config.language     = :en         # ISO-639 language code
+  # config.use_https    = false       # use HTTPS for lookup requests? (if supported)
+  # config.http_proxy   = nil         # HTTP proxy server (user:pass@host:port)
+  # config.https_proxy  = nil         # HTTPS proxy server (user:pass@host:port)
+  # config.api_key      = nil         # API key for geocoding service
+  # config.cache        = nil         # cache object (must respond to #[], #[]=, and #keys)
+  # config.cache_prefix = "geocoder:" # prefix (string) to use for all cache keys
 
 
-  # use HTTPS for geocoding service connections:
-  #Geocoder::Configuration.use_https = true
+  ## exceptions that should not be rescued by default
+  ## (if you want to implement custom error handling);
+  ## supports SocketError and TimeoutError
+  # config.always_raise = []
 
-  # language to use (for search queries and reverse geocoding):
-  #Geocoder::Configuration.language = :de
+  ## Calculation options
+  # config.units     = :mi        # :km for kilometers or :mi for miles
+  # config.distances = :linear    # :spherical or :linear
 
-  # use a proxy to access the service:
-  #Geocoder::Configuration.http_proxy  = "127.4.4.1"
-  #Geocoder::Configuration.https_proxy = "127.4.4.2" # only if HTTPS is needed
+  config.timeout      = 30           # geocoding service timeout (secs)
+  config.units     = :km        # :km for kilometers or :mi for miles
 
-  # caching (see below for details):
-  #config.cache = Redis.new
-  #config.cache_prefix = "..."
+
+  #todo: yizhen - figure out an auto configure instead to change it manually
+  config.http_proxy   = "web-proxy.sgp.hp.com:8080"          # HTTP proxy server (user:pass@host:port)
+  config.https_proxy  = "web-proxy.sgp.hp.com:8080"          # HTTPS proxy server (user:pass@host:port)
 
 end
+

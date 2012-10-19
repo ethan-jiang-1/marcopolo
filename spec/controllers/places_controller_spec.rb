@@ -24,7 +24,10 @@ describe PlacesController do
   # Place. As you add validations to Place, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+        :name => "beijing city",
+        :address => "beijing"
+    }
   end
 
   # This should return the minimal set of values that should be in the session
