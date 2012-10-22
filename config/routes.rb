@@ -1,6 +1,7 @@
 Macropolo::Application.routes.draw do
 
   get "home/index"
+  get "home/newplace"
   root :to => "home#index"
 
   #TODO: Yizhen - customize devise for Macropolo

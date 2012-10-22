@@ -1,0 +1,22 @@
+<%= form_tag( home_newplace_path,  :method => :get) do |f| %>
+
+    <% if !@geo_search.nil?  %>
+        <%= search_field_tag("search", "#{@geo_search}")  %>
+    <% else %>
+        <%= search_field_tag("search", "a place...") %>
+    <% end  %>
+    <%= submit_tag ("search") %>
+<% end %>
+
+<div class="geo_search">
+    <% if !@geo_results.nil? %>
+      <% @geo_results.each do |r| %>
+        <pre>
+        <%= p r.address %>
+          <%= p "latitude: " + r.coordinates[0].to_s  %>
+          <%= p "longitude:" + r.coordinates[1].to_s  %>
+        </pre>
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
+      <% end %>
+    <% end  %>
+</div>
