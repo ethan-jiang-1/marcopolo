@@ -23,13 +23,14 @@ Geocoder.configure do |config|
   # config.units     = :mi        # :km for kilometers or :mi for miles
   # config.distances = :linear    # :spherical or :linear
 
-  config.timeout      = 30           # geocoding service timeout (secs)
-  config.units     = :km        # :km for kilometers or :mi for miles
+  config.timeout      = 30          # geocoding service timeout (secs)
+  config.units        = :km         # :km for kilometers or :mi for miles
+  config.lookup       = :google     # name of geocoding service (symbol)
 
 
   #todo: yizhen - figure out an auto configure instead to change it manually
-  config.http_proxy   = "web-proxy.sgp.hp.com:8080"          # HTTP proxy server (user:pass@host:port)
-  config.https_proxy  = "web-proxy.sgp.hp.com:8080"          # HTTPS proxy server (user:pass@host:port)
+  #config.http_proxy   = "web-proxy.sgp.hp.com:8080"          # HTTP proxy server (user:pass@host:port)
+  #config.https_proxy  = "web-proxy.sgp.hp.com:8080"          # HTTPS proxy server (user:pass@host:port)
 
 end
 
