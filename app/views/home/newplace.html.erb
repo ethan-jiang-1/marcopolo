@@ -1,0 +1,23 @@
+<h2> Create a new place by google map </h2>
+<%= form_tag( home_newplace_path,  :method => :get) do |f| %>
+
+    <% if !@geo_search.nil?  %>
+        <%= search_field_tag("search", "#{@geo_search}", :class=>"input-xxlarge search-query")  %>
+    <% else %>
+        <%= search_field_tag("search", "type name of the place can be located in google map...", :class=>"input-xxlarge search-query") %>
+    <% end  %>
+    <%= submit_tag("search", :class=>"btn btn-inverse") %>
+<% end %>
+
+<div class="container-fluid muted">
+    <% if !@geo_results.nil? %>
+      <% @geo_results.each do |r| %>
+        <pre>
+        <%= p r.address %>
+          <%= p "latitude: " + r.coordinates[0].to_s  %>
+          <%= p "longitude:" + r.coordinates[1].to_s  %>
+        </pre>
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
+      <% end %>
+    <% end  %>
+</div>
