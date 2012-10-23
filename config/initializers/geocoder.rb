@@ -1,3 +1,5 @@
+require 'socket'
+
 Geocoder.configure do |config|
   ## Configurable parameters: if you wish to change some configurable
   ## behaviour in Geocoder, feel free to uncomment the following lines
@@ -29,8 +31,10 @@ Geocoder.configure do |config|
 
 
   #todo: yizhen - figure out an auto configure instead to change it manually
-  #config.http_proxy   = "web-proxy.sgp.hp.com:8080"          # HTTP proxy server (user:pass@host:port)
-  #config.https_proxy  = "web-proxy.sgp.hp.com:8080"          # HTTPS proxy server (user:pass@host:port)
+  if Socket.gethostname == "uvml"  #the vm behind the proxy inside HP
+    config.http_proxy   = "web-proxy.sgp.hp.com:8080"          # HTTP proxy server (user:pass@host:port)
+    config.https_proxy  = "web-proxy.sgp.hp.com:8080"          # HTTPS proxy server (user:pass@host:port)
+  end
 
 end
 

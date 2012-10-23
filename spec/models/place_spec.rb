@@ -2,18 +2,16 @@
 #
 # Table name: places
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  address     :string(255)
-#  alt_name1   :string(255)
-#  alt_name2   :string(255)
-#  alt_name3   :string(255)
-#  latitude    :float
-#  longitude   :float
-#  categories  :string(255)
-#  is_inactive :boolean
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  address         :string(255)
+#  unified_address :string(255)
+#  latitude        :float
+#  longitude       :float
+#  categories      :string(255)
+#  is_inactive     :boolean
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 
@@ -27,7 +25,7 @@ describe Place do
 
 
     it "should be able to create with good with validated data: name and address" do
-      a = Place.create!(:name=>"San Diego", :address=>"San Deigo, CA")
+      a = Place.create!(:name=>"San Diego", :address=>"San Diego, CA",  :unified_address=>"San Diego, CA, USA",)
 
       ax = Place.find_by_id(a.id)
       ax.id.should be a.id

@@ -3,9 +3,7 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
       t.string :name
       t.string :address
-      t.string :alt_name1
-      t.string :alt_name2
-      t.string :alt_name3
+      t.string :unified_address
       t.float :latitude
       t.float :longitude
       t.string  :categories
@@ -13,5 +11,7 @@ class CreatePlaces < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :places, :unified_address,                :unique => true
   end
 end

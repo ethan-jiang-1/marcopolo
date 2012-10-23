@@ -26,7 +26,8 @@ describe PlacesController do
   def valid_attributes
     {
         :name => "beijing city",
-        :address => "beijing"
+        :address => "beijing" ,
+        :unified_address => "beijing, china"
     }
   end
 

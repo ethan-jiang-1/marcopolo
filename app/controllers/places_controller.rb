@@ -26,8 +26,16 @@ class PlacesController < ApplicationController
   def new
     @place = Place.new
 
+    if !params[:unified_address].nil?
+      @place.address= params[:unified_address]
+      @place.unified_address= params[:unified_address]
+      @place.latitude= params[:latitude]
+      @place.longitude= params[:longitude]
+    end
+
     respond_to do |format|
-      format.html # new.html.erb
+#      format.html # new.html.erb
+      format.html { redirect_to home_newplace_path if params[:unified_address].nil? }
       format.json { render json: @place }
     end
   end

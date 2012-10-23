@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(:version => 20121009071723) do
   create_table "places", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "alt_name1"
-    t.string   "alt_name2"
-    t.string   "alt_name3"
+    t.string   "unified_address"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "categories"
     t.boolean  "is_inactive"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "places", ["unified_address"], :name => "index_places_on_unified_address", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

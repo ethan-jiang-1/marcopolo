@@ -9,15 +9,36 @@
     <%= submit_tag("search", :class=>"btn btn-inverse") %>
 <% end %>
 
+
 <div class="container-fluid muted">
     <% if !@geo_results.nil? %>
+      <table class="table table-striped">
+      <tbody>
       <% @geo_results.each do |r| %>
-        <pre>
-        <%= p r.address %>
+       <tr>
+         <% x = Place.where("unified_address =?", r.address).first %>
+         <td>
+           <pre>
+          <%= p r.address %>
           <%= p "latitude: " + r.coordinates[0].to_s  %>
           <%= p "longitude:" + r.coordinates[1].to_s  %>
-        </pre>
-          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
+          <%= p "(not in DB yet)" if x.nil? %>
+          </pre>
+         </td>
+         <td>
+           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
+           <% if x.nil? %>
+               <%= form_tag( new_place_path,  :method => :get) do |f1| %>
+                   <%= hidden_field_tag "unified_address", r.address %>
+                   <%= hidden_field_tag "latitude", r.coordinates[0].to_s %>
+                   <%= hidden_field_tag "longitude", r.coordinates[1].to_s %>
+                   <%= submit_tag "create the place in DB..." %>
+               <% end %>
+           <% end %>
+         </td>
+       </tr>
       <% end %>
+      </tbody>
+      </table>
     <% end  %>
 </div>
