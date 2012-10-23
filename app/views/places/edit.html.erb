@@ -1,9 +1,9 @@
-<h1>Editing place</h1>
+<h3>Editing place</h3>
 
 <%= form_for(@place) do |f| %>
     <% if @place.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+        <div id="error_explanation" class="alert alert-error">
+          <h4><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h4>
 
           <ul>
             <% @place.errors.full_messages.each do |msg| %>
