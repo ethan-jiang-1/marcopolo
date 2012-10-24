@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b59818f5-3fb8-415e-afa0-2dd10436b339" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/places/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/places/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/places/index.html.erb" afterPath="$PROJECT_DIR$/app/views/places/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/places/new.html.erb" afterPath="$PROJECT_DIR$/app/views/places/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/places/show.html.erb" afterPath="$PROJECT_DIR$/app/views/places/show.html.erb" />
-    </list>
+    <list default="true" id="b59818f5-3fb8-415e-afa0-2dd10436b339" name="Default" comment="" />
     <ignored path="marcopolo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,62 +22,7 @@
     <groupTables value="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="newplace.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home/newplace.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-13.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/places/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="41" selection-start="215" selection-end="215" vertical-scroll-proportion="-6.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="places_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/places_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="77" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.5187032">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/places/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="64" selection-start="460" selection-end="460" vertical-scroll-proportion="-8.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/places/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="75" selection-start="417" selection-end="417" vertical-scroll-proportion="-8.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/places/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="58" selection-start="186" selection-end="186" vertical-scroll-proportion="-6.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -878,7 +818,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="486" y="99" width="1332" height="961" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29888552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -888,7 +828,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44457832" sideWeight="0.8960937" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7346535" sideWeight="0.49835163" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41566265" sideWeight="0.8902954" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41566265" sideWeight="0.8902954" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1025,7 +965,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/places/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="75" selection-start="417" selection-end="417" vertical-scroll-proportion="-8.125">
+        <state line="13" column="75" selection-start="417" selection-end="417" vertical-scroll-proportion="0.4513889">
           <folding />
         </state>
       </provider>
@@ -1046,21 +986,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/places/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="64" selection-start="460" selection-end="460" vertical-scroll-proportion="-8.75">
+        <state line="14" column="64" selection-start="460" selection-end="460" vertical-scroll-proportion="0.4861111">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/places/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="186" selection-end="186" vertical-scroll-proportion="-6.25">
+        <state line="10" column="58" selection-start="186" selection-end="186" vertical-scroll-proportion="0.3579952">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/places_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="77" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.5187032">
+        <state line="48" column="51" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.7364706">
           <folding />
         </state>
       </provider>
