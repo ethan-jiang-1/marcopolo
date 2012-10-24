@@ -1,16 +1,16 @@
-<h2> Create a new place by google map </h2>
+<h4> Create a new place by google map </h4>
 <%= form_tag( home_newplace_path,  :method => :get) do |f| %>
 
     <% if !@geo_search.nil?  %>
         <%= search_field_tag("search", "#{@geo_search}", :class=>"input-xxlarge search-query")  %>
     <% else %>
-        <%= search_field_tag("search", "type name of the place can be located in google map...", :class=>"input-xxlarge search-query") %>
+        <%= search_field_tag("search", "a place...", :class=>"search-query") %>
     <% end  %>
     <%= submit_tag("search", :class=>"btn btn-inverse") %>
 <% end %>
 
 
-<div class="container-fluid muted">
+<div class="container-fluid">
     <% if !@geo_results.nil? %>
       <table class="table table-striped">
       <tbody>
@@ -18,12 +18,9 @@
        <tr>
          <% x = Place.where("unified_address =?", r.address).first %>
          <td>
-           <pre>
-          <%= p r.address %>
-          <%= p "latitude: " + r.coordinates[0].to_s  %>
-          <%= p "longitude:" + r.coordinates[1].to_s  %>
-          <%= p "(not in DB yet)" if x.nil? %>
-          </pre>
+           <h5> <%= r.address %></h5>
+           <p> <%= "Latitude: " + r.coordinates[0].to_s %> </p>
+           <p> <%= "Longitude:" + r.coordinates[1].to_s  %> </p>
          </td>
          <td>
            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
@@ -32,7 +29,7 @@
                    <%= hidden_field_tag "unified_address", r.address %>
                    <%= hidden_field_tag "latitude", r.coordinates[0].to_s %>
                    <%= hidden_field_tag "longitude", r.coordinates[1].to_s %>
-                   <%= submit_tag "create the place in DB..." %>
+                   <%= submit_tag "Create the place in macropolo map...", :class=>"btn-link" %>
                <% end %>
            <% end %>
          </td>
