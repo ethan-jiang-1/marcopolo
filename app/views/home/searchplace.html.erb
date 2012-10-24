@@ -1,0 +1,10 @@
+<h4> List of matched places for <%=  @search %></h4>
+<table class="table table-stripped">
+<% @places.each do |pl| %>
+<tr>
+  <td><%=  pl.name %></td>
+  <td><%=  pl.unified_address %></td>
+  <td> <%= link_to "go", place_landing_show_path+"?id=#{pl.id}"  %></td>
+</tr>
+<% end %>
+</table>

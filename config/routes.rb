@@ -1,7 +1,10 @@
 Macropolo::Application.routes.draw do
 
+  get "place_landing/show"
+
   get "home/index"
   get "home/newplace"
+  get "home/searchplace"
   root :to => "home#index"
 
   #TODO: Yizhen - customize devise for Macropolo

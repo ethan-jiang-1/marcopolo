@@ -9,6 +9,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def searchplace
+    @search = params[:search]
+    @places = Place.where("unified_address LIKE ?", "%#{params[:search]}%")
+  end
+
   private
   def lookup_newplace(query)
     @geo_search = query
