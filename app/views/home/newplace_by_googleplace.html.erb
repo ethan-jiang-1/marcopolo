@@ -28,7 +28,7 @@
                     <% end %>
               </td>
               <td>
-                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.lat}%2C#{r.lng}" %>
+                <%= gmap_static_image_tag(r.lat, r.lng, r.types) %>
               </td>
               <td>
                 <%= image_tag "#{r.icon}" %>
