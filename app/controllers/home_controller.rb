@@ -38,7 +38,7 @@ class HomeController < ApplicationController
 
   def lookup_newplace_by_googleplace(query)
     @gpl_search = query
-    @gpl_client = GooglePlaces::Client.new("AIzaSyCEnnMUAvlq0DeYsQ-vWcVqUNi8_qM2ol8")
+    @gpl_client = GooglePlaces::Client.new(ApplicationHelper::MACROPOLO_GMAP_API_KEY)
     @gpl_results = @gpl_client.spots_by_query(query)
 
 #    @gpl_results.each do |r|
@@ -59,7 +59,7 @@ class HomeController < ApplicationController
 
     if (lat != 0.0 && lng != 0.0 )
 
-      @cdt_gpl_client = GooglePlaces::Client.new("AIzaSyCEnnMUAvlq0DeYsQ-vWcVqUNi8_qM2ol8")
+      @cdt_gpl_client = GooglePlaces::Client.new(ApplicationHelper::MACROPOLO_GMAP_API_KEY)
       @cdt_gpl_results = @cdt_gpl_client.spots(lat,lng)
 
       @cdt_geo_results = Geocoder.search(query)

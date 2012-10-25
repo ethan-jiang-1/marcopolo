@@ -4,7 +4,7 @@
     <% if !@cdt_search.nil?  %>
         <%= search_field_tag("search", "#{@cdt_search}", :class=>"input-xxlarge search-query")  %>
     <% else %>
-        <%= search_field_tag("search", "a coordinate(latitude,longitude)...", :class=>"input-xxlarge, search-query") %>
+        <%= search_field_tag("search", "a coordinate(latitude,longitude)...", :class=>"input-xxlarge search-query") %>
     <% end  %>
     <%= submit_tag("search", :class=>"btn btn-inverse") %>
 <% end %>
