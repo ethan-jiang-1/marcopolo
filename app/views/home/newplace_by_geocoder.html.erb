@@ -1,10 +1,10 @@
-<h4> Create a new place by google map </h4>
-<%= form_tag( home_newplace_path,  :method => :get) do |f| %>
+<h4> Create a new place by google geocoder </h4>
+<%= form_tag( home_newplace_by_geocoder_path,  :method => :get) do |f| %>
 
     <% if !@geo_search.nil?  %>
         <%= search_field_tag("search", "#{@geo_search}", :class=>"input-xxlarge search-query")  %>
     <% else %>
-        <%= search_field_tag("search", "a place...", :class=>"search-query") %>
+        <%= search_field_tag("search", "a place...", :class=>"input-xxlarge search-query") %>
     <% end  %>
     <%= submit_tag("search", :class=>"btn btn-inverse") %>
 <% end %>
@@ -21,6 +21,21 @@
            <h5> <%= r.address %></h5>
            <p> <%= "Latitude: " + r.coordinates[0].to_s %> </p>
            <p> <%= "Longitude:" + r.coordinates[1].to_s  %> </p>
+         </td>
+         <td>
+           <% r.data["address_components"].each do |ac| %>
+               <p>
+                    <%= ac.each do |k, v| %>
+                        <p> <%=  "#{k} = #{v}" %></p>
+                    <% end  %>
+                </p>
+               <hr>
+           <% end %>
+         </td>
+         <td>
+           <% r.data["types"].each do |t| %>
+             <p> <%= t %></p>
+           <% end %>
          </td>
          <td>
            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
