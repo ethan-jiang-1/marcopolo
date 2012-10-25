@@ -38,7 +38,7 @@
            <% end %>
          </td>
          <td>
-           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.coordinates[0]}%2C#{r.coordinates[1]}" %>
+	   <%= gmap_image_tag(r.coordinates[0], r.coordinates[1], r.data["types"]) %>
            <% if x.nil? %>
                <%= form_tag( new_place_path,  :method => :get) do |f1| %>
                    <%= hidden_field_tag "unified_address", r.address %>
