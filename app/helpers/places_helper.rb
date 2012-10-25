@@ -1,7 +1,9 @@
 module PlacesHelper
 
 
-  def gmap_static_image_tag (lat, lng, types = nil)
+# as for types defined in gmap-geocoder,  check https://developers.google.com/maps/documentation/geocoding/ for details
+
+def gmap_static_image_tag (lat, lng, types = nil)
     size="450x300"
     zoom = 4
 
@@ -10,13 +12,23 @@ module PlacesHelper
     end
 
     if @hash_type_to_zoom.empty?
+
       @hash_type_to_zoom["country"]                     = 3             #country
       @hash_type_to_zoom["administrative_area_level_1"] = 4             #state
       @hash_type_to_zoom["administrative_area_level_2"] = 5             #city
+      @hash_type_to_zoom["administrative_area_level_3"] = 6             #sub-city?
+
+      @hash_type_to_zoom["colloquial_area"]             = 7
       @hash_type_to_zoom["locality"]                    = 8
       @hash_type_to_zoom["sublocality"]                 = 11
-      @hash_type_to_zoom["route"]                       = 12
+
       @hash_type_to_zoom["establishment"]               = 12
+      @hash_type_to_zoom["neighborhood"]                = 12
+      @hash_type_to_zoom["premise"]                     = 12
+      @hash_type_to_zoom["subpremise"]                  = 12
+
+      @hash_type_to_zoom["route"]                       = 12
+      @hash_type_to_zoom["intersection"]                = 14
       @hash_type_to_zoom["street_address"]              = 14
     end
 
@@ -42,3 +54,5 @@ module PlacesHelper
   end
 
 end
+
+
