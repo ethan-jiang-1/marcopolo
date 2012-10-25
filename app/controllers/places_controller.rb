@@ -35,7 +35,7 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
 #      format.html # new.html.erb
-      format.html { redirect_to home_newplace_path if params[:unified_address].nil? }
+      format.html { redirect_to home_newplace_by_geocoder_path if params[:unified_address].nil? }
       format.json { render json: @place }
     end
   end

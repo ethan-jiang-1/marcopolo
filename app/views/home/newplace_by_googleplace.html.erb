@@ -1,0 +1,41 @@
+<h4> Create a new place by google place </h4>
+<%= form_tag( home_newplace_by_googleplace_path,  :method => :get) do |f| %>
+
+    <% if !@gpl_search.nil?  %>
+        <%= search_field_tag("search", "#{@gpl_search}", :class=>"input-xxlarge search-query")  %>
+    <% else %>
+        <%= search_field_tag("search", "a place...", :class=>"input-xxlarge search-query") %>
+    <% end  %>
+    <%= submit_tag("search", :class=>"btn btn-inverse") %>
+<% end %>
+
+
+<div class="container-fluid">
+  <% if !@gpl_results.nil? %>
+      <table class="table table-striped">
+        <tbody>
+        <% @gpl_results.each do |r| %>
+            <tr>
+              <td>
+                <h5> <%= r.name %></h5>
+                <p> <%= r.formatted_address %></p>
+                <p> <%= "Latitude: " + r.lat.to_s %> </p>
+                <p> <%= "Longitude:" + r.lng.to_s  %> </p>
+              </td>
+              <td>
+                    <% r.types.each do |t| %>
+                        <p> <%= t %></p>
+                    <% end %>
+              </td>
+              <td>
+                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=4&markers=#{r.lat}%2C#{r.lng}" %>
+              </td>
+              <td>
+                <%= image_tag "#{r.icon}" %>
+            </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+  <% end  %>
+</div>

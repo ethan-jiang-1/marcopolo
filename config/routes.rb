@@ -3,7 +3,9 @@ Macropolo::Application.routes.draw do
   get "place_landing/show"
 
   get "home/index"
-  get "home/newplace"
+  get "home/newplace_by_geocoder"
+  get "home/newplace_by_googleplace"
+  get "home/newplace_by_coordinate"
   get "home/searchplace"
   root :to => "home#index"
 
