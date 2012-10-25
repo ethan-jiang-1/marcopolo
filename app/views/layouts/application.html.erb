@@ -45,15 +45,20 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand" href="#">Macropolo</a>
-      <!--
-      <div class="container-fluid nav-collapse">
+      <div class="container-fluid nav-collapse pull-right">
         <ul class="nav">
-          <li>< %= link_to "Link1", "/path1"  %></li>
-          <li>< %= link_to "Link2", "/path2"  %></li>
-          <li>< %= link_to "Link3", "/path3"  %></li>
+          <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Dev <b class="caret"></b> </a>
+		<ul class="dropdown-menu pull-left">
+		  <li><%= link_to "New Place by GeoCoder", 	home_newplace_by_geocoder_path  %></li>
+		  <li><%= link_to "New Place by Google Place",	home_newplace_by_googleplace_path  %></li>
+		  <li><%= link_to "New Place by Coordinate", 	home_newplace_by_coordinate_path  %></li>
+		</ul>
+	  </li>
+	  <li class="active"> <%= link_to "Home", home_index_path %> </li>
+	  <li class="inactive"> <%= link_to "Login" %> </li>
         </ul>
       </div>
-      -->
       <!--/.nav-collapse -->
     </div>
   </div>
